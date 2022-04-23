@@ -4,4 +4,5 @@
 <% if tweet.user_id==current_user.id %>
     <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
 <% end %>
+<span><%=link_to "reply(#{tweet.reply_tweets.length})","/tweets/#{tweet.id}"%></span>
 <hr>

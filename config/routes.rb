@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post '/tweets/reply'
+  resources :tweets, only:[:create,:destroy,:show]
   get '/:nickname/followers', to:'users#show_followers'
   get '/:nickname/followings', to:'users#show_followings'
   get '/:nickname', to: 'users#show'

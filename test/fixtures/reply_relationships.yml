@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  main_tweet_id: 1
+  reply_tweet_id: 1
+
+two:
+  main_tweet_id: 1
+  reply_tweet_id: 1

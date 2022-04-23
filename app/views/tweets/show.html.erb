@@ -1,0 +1,18 @@
+<%while !@main_tweets.empty? do %>
+    <%= render 'layouts/tweet',tweet: @main_tweets.pop %>
+<%end%>
+<%= render 'layouts/tweet',tweet: @tweet %>
+<%if logged_in?%>
+    <%= form_with model: @tweet.reply_tweets.new, url: {controller: 'tweets', action: 'reply' } do |f| %>
+        <div class="field">
+            <%= hidden_field_tag :main_tweet_id, @tweet.id %>
+            <%= f.text_area :content, placeholder: "Compose reply tweet..." %>
+            <%= f.submit 'Reply' %>
+        </div>
+    <% end %>
+<% end %>
+
+<h4>reply</h4>
+<%@replies.each do |reply|%>
+    <%= render 'layouts/tweet',tweet: reply %>
+<%end%>
