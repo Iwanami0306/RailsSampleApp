@@ -1,0 +1,7 @@
+<div><%= image_tag tweet.user.image,size: "60x60" %><%= link_to tweet.user.name ,"/#{tweet.user.nickname}"%></div>
+<div><%=tweet.content%></div>
+<small><%=tweet.created_at%></small>
+<% if tweet.user_id==current_user.id %>
+    <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+<% end %>
+<hr>

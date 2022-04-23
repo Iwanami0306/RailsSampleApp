@@ -1,7 +1,9 @@
 <header class="header">
-  <% if logged_in? %>
-    <%= link_to 'ログアウト', logout_path %>
-  <% else %>
-    <a href="/auth/twitter">ログイン</a>
-  <% end %>
+    <% if logged_in? %>
+        <%= link_to 'ホーム', '/' %>
+        <%= link_to 'ユーザリスト', '/users/index'%>
+        <%= link_to 'ログアウト', logout_path %>
+    <% else %>
+        <a href="/auth/twitter">ログイン</a>
+    <% end %>
 </header>

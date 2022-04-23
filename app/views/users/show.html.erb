@@ -1,0 +1,11 @@
+<div>
+    <%= image_tag @user.image, size: '120x120'%><%= @user.name %>@<%= @user.nickname%>
+    <hr>
+    <%if @tweets %>
+        <%@tweets.each do |tweet|%>
+            <%= render 'layouts/tweet',tweet: tweet %>
+        <%end%>
+    <%end%>
+</div>
+
+

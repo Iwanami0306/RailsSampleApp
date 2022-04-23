@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_23_063838) do
+ActiveRecord::Schema.define(version: 2022_04_23_071916) do
+
+  create_table "tweets", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "created_at"], name: "index_tweets_on_user_id_and_created_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "uid"
