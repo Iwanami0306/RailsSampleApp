@@ -1,0 +1,7 @@
+<h4><%=@user.name%>@<%=@user.nickname%>がフォロー中</h4>
+<%@followings.each do |following|%>
+    <div>
+        <%=image_tag following.image, size:"60x60"%><%= link_to "#{following.name}@#{following.nickname}", "/#{following.nickname}"%>
+    </div>
+<%end%>
+

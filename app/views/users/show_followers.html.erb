@@ -1,0 +1,7 @@
+<h4><%=@user.name%>@<%=@user.nickname%>のフォロワー</h4>
+<%@followers.each do |follower|%>
+    <div>
+    <%=image_tag follower.image, size:"60x60"%><%= link_to "#{follower.name}@#{follower.nickname}", "/#{follower.nickname}"%>
+    <%if @user.followings.include?(follower)%><span>フォロー中</span><%end%>
+    </div>
+<%end%>
